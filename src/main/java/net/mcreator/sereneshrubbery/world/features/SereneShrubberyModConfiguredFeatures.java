@@ -34,7 +34,7 @@ public class SereneShrubberyModConfiguredFeatures {
 //                    new RandomPatchConfiguration(32, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
 //                            new SimpleBlockConfiguration(BlockStateProvider.simple(SereneShrubberyModBlocks.PURPLE_LUPINE.get())))));
 
-    public static final RegistryObject<ConfiguredFeature<?, ?>> LUPIN_GROUP = CONFIGURED_FEATURES.register("lupin_configured_feature",
+    public static final RegistryObject<ConfiguredFeature<?, ?>> LUPIN_GROUP = CONFIGURED_FEATURES.register("forest_simple",
             () -> new ConfiguredFeature(Feature.FLOWER,
                     new RandomPatchConfiguration(96, 4, 4,
                             PlacementUtils.onlyWhenEmpty((Feature)Feature.SIMPLE_BLOCK,
@@ -49,7 +49,7 @@ public class SereneShrubberyModConfiguredFeatures {
                                                     ))))
                     )));
 
-    public static final RegistryObject<ConfiguredFeature<?, ?>> FOXGLOVE_GROUP = CONFIGURED_FEATURES.register("foxglove_configured_feature",
+    public static final RegistryObject<ConfiguredFeature<?, ?>> FOXGLOVE_GROUP = CONFIGURED_FEATURES.register("jungle",
             () -> new ConfiguredFeature(Feature.FLOWER,
                     new RandomPatchConfiguration(96, 4, 4,
                             PlacementUtils.onlyWhenEmpty((Feature)Feature.SIMPLE_BLOCK,
@@ -65,7 +65,7 @@ public class SereneShrubberyModConfiguredFeatures {
                                             ))))
                     )));
 
-    public static final RegistryObject<ConfiguredFeature<?, ?>> PANSIES_GROUP = CONFIGURED_FEATURES.register("pansies_configured_feature",
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PANSIES_GROUP = CONFIGURED_FEATURES.register("coniferous",
             () -> new ConfiguredFeature(Feature.FLOWER,
                     new RandomPatchConfiguration(96, 4, 4,
                             PlacementUtils.onlyWhenEmpty((Feature)Feature.SIMPLE_BLOCK,
@@ -82,7 +82,7 @@ public class SereneShrubberyModConfiguredFeatures {
                                                     SereneShrubberyModBlocks.YELLOW_PANSIES.get().defaultBlockState()
                                             )))))));
 
-    public static final RegistryObject<ConfiguredFeature<?, ?>> HYDRANGEA_GROUP = CONFIGURED_FEATURES.register("hydrangea_configured_feature",
+    public static final RegistryObject<ConfiguredFeature<?, ?>> HYDRANGEA_GROUP = CONFIGURED_FEATURES.register("forest_and_plains",
             () -> new ConfiguredFeature(Feature.FLOWER,
                     new RandomPatchConfiguration(96, 4, 4,
                             PlacementUtils.onlyWhenEmpty((Feature)Feature.SIMPLE_BLOCK,
@@ -97,7 +97,7 @@ public class SereneShrubberyModConfiguredFeatures {
                                                     SereneShrubberyModBlocks.SUNSET_FOXGLOVE.get().defaultBlockState()
                                             )))))));
 
-    public static final RegistryObject<ConfiguredFeature<?, ?>> CACTUS_GROUP = CONFIGURED_FEATURES.register("cactus_configured_feature",
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CACTUS_GROUP = CONFIGURED_FEATURES.register("desert",
             () -> new ConfiguredFeature(Feature.FLOWER,
                     new RandomPatchConfiguration(96, 4, 4,
                             PlacementUtils.onlyWhenEmpty((Feature)Feature.SIMPLE_BLOCK,
@@ -111,7 +111,7 @@ public class SereneShrubberyModConfiguredFeatures {
                                             )))))));
 
 
-    public static final RegistryObject<ConfiguredFeature<?, ?>> WATER_LILY_GROUP = CONFIGURED_FEATURES.register("water_lily_configured_feature",
+    public static final RegistryObject<ConfiguredFeature<?, ?>> WATER_LILY_GROUP = CONFIGURED_FEATURES.register("swampy_and_jungle",
             () -> new ConfiguredFeature(Feature.FLOWER,
                     new RandomPatchConfiguration(96, 4, 4,
                             PlacementUtils.onlyWhenEmpty((Feature)Feature.SIMPLE_BLOCK,
@@ -124,7 +124,7 @@ public class SereneShrubberyModConfiguredFeatures {
                                                     SereneShrubberyModBlocks.WATER_LILY_2.get().defaultBlockState()
                                             )))))));
 
-    public static final RegistryObject<ConfiguredFeature<?, ?>> LIVERWORT_GROUP = CONFIGURED_FEATURES.register("liverwort_configured_feature",
+    public static final RegistryObject<ConfiguredFeature<?, ?>> LIVERWORT_GROUP = CONFIGURED_FEATURES.register("birch",
             () -> new ConfiguredFeature(Feature.FLOWER,
                     new RandomPatchConfiguration(96, 4, 4,
                             PlacementUtils.onlyWhenEmpty((Feature)Feature.SIMPLE_BLOCK,
@@ -138,7 +138,7 @@ public class SereneShrubberyModConfiguredFeatures {
                                                     SereneShrubberyModBlocks.WHITE_LIVERWORT.get().defaultBlockState()
                                             )))))));
 
-    public static final RegistryObject<ConfiguredFeature<?, ?>> NO_CATEGORY_GROUP = CONFIGURED_FEATURES.register("no_category_configured_feature",
+    public static final RegistryObject<ConfiguredFeature<?, ?>> NO_CATEGORY_GROUP = CONFIGURED_FEATURES.register("savanna",
             () -> new ConfiguredFeature(Feature.FLOWER,
                     new RandomPatchConfiguration(96, 4, 4,
                             PlacementUtils.onlyWhenEmpty((Feature)Feature.SIMPLE_BLOCK,
