@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#serene_shrubbery:is_birch",
+  "features": "serene_shrubbery:birch",
+  "step": "vegetal_decoration"
+}

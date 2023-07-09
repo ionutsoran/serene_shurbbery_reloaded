@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#serene_shrubbery:is_savanna",
+  "features": "serene_shrubbery:savanna",
+  "step": "vegetal_decoration"
+}

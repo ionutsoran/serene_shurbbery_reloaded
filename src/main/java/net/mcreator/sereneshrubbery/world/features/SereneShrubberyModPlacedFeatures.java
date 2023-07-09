@@ -26,7 +26,7 @@ public class SereneShrubberyModPlacedFeatures {
             DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, SereneShrubberyMod.MOD_ID);
 
 
-    public static final RegistryObject<PlacedFeature> LUPIN_PLACED = PLACED_FEATURES.register("mixed_blue",
+    public static final RegistryObject<PlacedFeature> LUPIN_PLACED = PLACED_FEATURES.register("forest_simple",
             () -> new PlacedFeature(SereneShrubberyModConfiguredFeatures.LUPIN_GROUP.getHolder().get(),
                     List.of(NoiseThresholdCountPlacement.of((double)-1.8, (int)16, (int)2),
                             RarityFilter.onAverageOnceEvery(16),
@@ -35,7 +35,7 @@ public class SereneShrubberyModPlacedFeatures {
                             BiomeFilter.biome())));
 
 
-    public static final RegistryObject<PlacedFeature> FOXGLOVE_PLACED = PLACED_FEATURES.register("jungle_peach",
+    public static final RegistryObject<PlacedFeature> FOXGLOVE_PLACED = PLACED_FEATURES.register("jungle",
             () -> new PlacedFeature(SereneShrubberyModConfiguredFeatures.FOXGLOVE_GROUP.getHolder().get(),
                     List.of(NoiseThresholdCountPlacement.of((double)-1.8, (int)16, (int)2),
                             RarityFilter.onAverageOnceEvery(16),
@@ -43,7 +43,31 @@ public class SereneShrubberyModPlacedFeatures {
                             PlacementUtils.HEIGHTMAP,
                             BiomeFilter.biome())));
 
-    public static final RegistryObject<PlacedFeature> WATER_LILIES_PLACED = PLACED_FEATURES.register("water_joy_cave",
+    public static final RegistryObject<PlacedFeature> PANSIES_PLACED = PLACED_FEATURES.register("coniferous",
+            () -> new PlacedFeature(SereneShrubberyModConfiguredFeatures.PANSIES_GROUP.getHolder().get(),
+                    List.of(NoiseThresholdCountPlacement.of((double)-1.8, (int)16, (int)2),
+                            RarityFilter.onAverageOnceEvery(16),
+                            InSquarePlacement.spread(),
+                            PlacementUtils.HEIGHTMAP,
+                            BiomeFilter.biome())));
+
+    public static final RegistryObject<PlacedFeature> HYDRANGEA_PLACED = PLACED_FEATURES.register("forest_and_plains",
+            () -> new PlacedFeature(SereneShrubberyModConfiguredFeatures.HYDRANGEA_GROUP.getHolder().get(),
+                    List.of(NoiseThresholdCountPlacement.of((double)-1.8, (int)16, (int)2),
+                            RarityFilter.onAverageOnceEvery(16),
+                            InSquarePlacement.spread(),
+                            PlacementUtils.HEIGHTMAP,
+                            BiomeFilter.biome())));
+
+    public static final RegistryObject<PlacedFeature> LIVERWORT_PLACED = PLACED_FEATURES.register("birch",
+            () -> new PlacedFeature(SereneShrubberyModConfiguredFeatures.LIVERWORT_GROUP.getHolder().get(),
+                    List.of(NoiseThresholdCountPlacement.of((double)-1.8, (int)16, (int)2),
+                            RarityFilter.onAverageOnceEvery(16),
+                            InSquarePlacement.spread(),
+                            PlacementUtils.HEIGHTMAP,
+                            BiomeFilter.biome())));
+
+    public static final RegistryObject<PlacedFeature> WATER_LILIES_PLACED = PLACED_FEATURES.register("swampy_and_jungle",
             () -> new PlacedFeature(SereneShrubberyModConfiguredFeatures.WATER_LILY_GROUP.getHolder().get(),
                     List.of(
                             RarityFilter.onAverageOnceEvery((int)4),
@@ -66,8 +90,14 @@ public class SereneShrubberyModPlacedFeatures {
                             PlacementUtils.HEIGHTMAP,
                             BiomeFilter.biome()
                     )));
-//
 
+    public static final RegistryObject<PlacedFeature> NO_CATEGORY_PLACED = PLACED_FEATURES.register("savanna",
+            () -> new PlacedFeature(SereneShrubberyModConfiguredFeatures.NO_CATEGORY_GROUP.getHolder().get(),
+                    List.of(NoiseThresholdCountPlacement.of((double)-1.8, (int)16, (int)2),
+                            RarityFilter.onAverageOnceEvery(16),
+                            InSquarePlacement.spread(),
+                            PlacementUtils.HEIGHTMAP,
+                            BiomeFilter.biome())));
 
 //    public static final RegistryObject<PlacedFeature> CHERRY_PLACED = FF_PLACED_FEATURES.register("cherry",
 //            () -> new PlacedFeature((Holder)ModFlowersFeatures.CHERRY.getHolder().get(),

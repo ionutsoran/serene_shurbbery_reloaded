@@ -46,7 +46,8 @@ public class SereneShrubberyModConfiguredFeatures {
                                                     SereneShrubberyModBlocks.PURPLE_LUPINE.get().defaultBlockState(),
                                                     SereneShrubberyModBlocks.PINK_LUPINE.get().defaultBlockState(),
                                                     SereneShrubberyModBlocks.WHITE_LUPINE.get().defaultBlockState()
-                                                    )))))));
+                                                    ))))
+                    )));
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> FOXGLOVE_GROUP = CONFIGURED_FEATURES.register("foxglove_configured_feature",
             () -> new ConfiguredFeature(Feature.FLOWER,
@@ -61,8 +62,40 @@ public class SereneShrubberyModConfiguredFeatures {
                                                     SereneShrubberyModBlocks.PURPLE_FOXGLOVE.get().defaultBlockState(),
                                                     SereneShrubberyModBlocks.WHITE_FOXGLOVE.get().defaultBlockState(),
                                                     SereneShrubberyModBlocks.SUNSET_FOXGLOVE.get().defaultBlockState()
+                                            ))))
+                    )));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PANSIES_GROUP = CONFIGURED_FEATURES.register("pansies_configured_feature",
+            () -> new ConfiguredFeature(Feature.FLOWER,
+                    new RandomPatchConfiguration(96, 4, 4,
+                            PlacementUtils.onlyWhenEmpty((Feature)Feature.SIMPLE_BLOCK,
+                                    (FeatureConfiguration)new SimpleBlockConfiguration(new DualNoiseProvider(
+                                            new InclusiveRange<>(10, 64),
+                                            new NormalNoise.NoiseParameters(0, -2.0), 1.0f, 2345L,
+                                            new NormalNoise.NoiseParameters(128, 2.0), 1.0f,
+                                            List.of(
+                                                    SereneShrubberyModBlocks.RED_PANSIES.get().defaultBlockState(),
+                                                    SereneShrubberyModBlocks.PURPLE_PANSIES.get().defaultBlockState(),
+                                                    SereneShrubberyModBlocks.PINK_PANSIES.get().defaultBlockState(),
+                                                    SereneShrubberyModBlocks.WHITE_PANSIES.get().defaultBlockState(),
+                                                    SereneShrubberyModBlocks.ORANGE_PANSIES.get().defaultBlockState(),
+                                                    SereneShrubberyModBlocks.YELLOW_PANSIES.get().defaultBlockState()
                                             )))))));
 
+    public static final RegistryObject<ConfiguredFeature<?, ?>> HYDRANGEA_GROUP = CONFIGURED_FEATURES.register("hydrangea_configured_feature",
+            () -> new ConfiguredFeature(Feature.FLOWER,
+                    new RandomPatchConfiguration(96, 4, 4,
+                            PlacementUtils.onlyWhenEmpty((Feature)Feature.SIMPLE_BLOCK,
+                                    (FeatureConfiguration)new SimpleBlockConfiguration(new DualNoiseProvider(
+                                            new InclusiveRange<>(10, 64),
+                                            new NormalNoise.NoiseParameters(0, -2.0), 1.0f, 2345L,
+                                            new NormalNoise.NoiseParameters(128, 2.0), 1.0f,
+                                            List.of(
+                                                    SereneShrubberyModBlocks.PEACH_FOXGLOVE.get().defaultBlockState(),
+                                                    SereneShrubberyModBlocks.PURPLE_FOXGLOVE.get().defaultBlockState(),
+                                                    SereneShrubberyModBlocks.WHITE_FOXGLOVE.get().defaultBlockState(),
+                                                    SereneShrubberyModBlocks.SUNSET_FOXGLOVE.get().defaultBlockState()
+                                            )))))));
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> CACTUS_GROUP = CONFIGURED_FEATURES.register("cactus_configured_feature",
             () -> new ConfiguredFeature(Feature.FLOWER,
@@ -104,6 +137,21 @@ public class SereneShrubberyModConfiguredFeatures {
                                                     SereneShrubberyModBlocks.PURPLE_FOXGLOVE.get().defaultBlockState(),
                                                     SereneShrubberyModBlocks.WHITE_LIVERWORT.get().defaultBlockState()
                                             )))))));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> NO_CATEGORY_GROUP = CONFIGURED_FEATURES.register("no_category_configured_feature",
+            () -> new ConfiguredFeature(Feature.FLOWER,
+                    new RandomPatchConfiguration(96, 4, 4,
+                            PlacementUtils.onlyWhenEmpty((Feature)Feature.SIMPLE_BLOCK,
+                                    (FeatureConfiguration)new SimpleBlockConfiguration(new DualNoiseProvider(
+                                            new InclusiveRange<>(10, 64),
+                                            new NormalNoise.NoiseParameters(0, -2.0), 1.0f, 2345L,
+                                            new NormalNoise.NoiseParameters(128, 2.0), 1.0f,
+                                            List.of(
+                                                    SereneShrubberyModBlocks.BLANKET_FLOWER.get().defaultBlockState(),
+                                                    SereneShrubberyModBlocks.FIREWEED.get().defaultBlockState(),
+                                                    SereneShrubberyModBlocks.TWINFLOWER.get().defaultBlockState()
+                                            )))))));
+
 
     public static void register(IEventBus eventBus){
         CONFIGURED_FEATURES.register(eventBus);

@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#serene_shrubbery:is_swampy_and_jungle",
+  "features": "serene_shrubbery:swampy_and_jungle",
+  "step": "vegetal_decoration"
+}

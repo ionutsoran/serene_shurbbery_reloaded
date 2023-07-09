@@ -174,17 +174,6 @@ public class SereneShrubberyModBlocks {
             () -> new PurpleButterflyBushBlock(BlockBehaviour.Properties.of(Material.GRASS)
                     .instabreak().noCollission().sound(SoundType.GRASS).lightLevel((l)-> {return 1;})),
             SereneShrubberyModTabs.TAB_SERENE_SHRUBBERY);
-
-    public static final RegistryObject<Block> BLANKET_FLOWER = registerBlock("blanket_flower",
-            () -> new BlanketFlowerBlock(BlockBehaviour.Properties.of(Material.GRASS)
-                    .instabreak().noCollission().sound(SoundType.GRASS).lightLevel((l)-> {return 1;})),
-            SereneShrubberyModTabs.TAB_SERENE_SHRUBBERY);
-
-    public static final RegistryObject<Block> TWINFLOWER = registerBlock("twinflower",
-            () -> new TwinflowerBlock(BlockBehaviour.Properties.of(Material.GRASS)
-                    .instabreak().noCollission().sound(SoundType.GRASS).lightLevel((l)-> {return 1;})),
-            SereneShrubberyModTabs.TAB_SERENE_SHRUBBERY);
-
     public static final RegistryObject<Block> BLUE_LIVERWORT = registerBlock("blue_liverwort",
             () -> new BlueLiverwortBlock(BlockBehaviour.Properties.of(Material.GRASS)
                     .instabreak().noCollission().sound(SoundType.GRASS).lightLevel((l)-> {return 1;})),
@@ -200,6 +189,14 @@ public class SereneShrubberyModBlocks {
                     .instabreak().noCollission().sound(SoundType.GRASS).lightLevel((l)-> {return 1;})),
             SereneShrubberyModTabs.TAB_SERENE_SHRUBBERY);
 
+    public static final RegistryObject<Block> BLANKET_FLOWER = registerBlock("blanket_flower",
+            () -> new BlanketFlowerBlock(BlockBehaviour.Properties.of(Material.GRASS)
+                    .instabreak().noCollission().sound(SoundType.GRASS).lightLevel((l)-> {return 1;})),
+            SereneShrubberyModTabs.TAB_SERENE_SHRUBBERY);
+    public static final RegistryObject<Block> TWINFLOWER = registerBlock("twinflower",
+            () -> new TwinflowerBlock(BlockBehaviour.Properties.of(Material.GRASS)
+                    .instabreak().noCollission().sound(SoundType.GRASS).lightLevel((l)-> {return 1;})),
+            SereneShrubberyModTabs.TAB_SERENE_SHRUBBERY);
     public static final RegistryObject<Block> FIREWEED = registerBlock("fireweed",
             () -> new FireweedBlock(BlockBehaviour.Properties.of(Material.GRASS)
                     .instabreak().noCollission().sound(SoundType.GRASS).lightLevel((l)-> {return 1;})),
