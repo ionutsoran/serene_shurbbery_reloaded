@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "serene_shrubbery:blocks/invisible",
+    "particle": "serene_shrubbery:blocks/invisible"
+  }
+}

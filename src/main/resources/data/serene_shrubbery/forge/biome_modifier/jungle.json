@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#serene_shrubbery:is_jungle_peach",
+  "features": "serene_shrubbery:jungle_peach",
+  "step": "vegetal_decoration"
+}

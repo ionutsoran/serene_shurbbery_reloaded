@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "experience": 2,
+  "cookingtime": 200,
+  "ingredient": {
+    "item": "serene_shrubbery:barrel_cactuss_1"
+  },
+  "result": "minecraft:green_dye"
+}

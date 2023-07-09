@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#serene_shrubbery:is_mixed_blue",
+  "features": "serene_shrubbery:mixed_blue",
+  "step": "vegetal_decoration"
+}

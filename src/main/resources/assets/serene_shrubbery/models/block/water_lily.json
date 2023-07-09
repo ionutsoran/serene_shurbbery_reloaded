@@ -1,0 +1,9 @@
+{
+  "parent": "serene_shrubbery:custom/waterlily2",
+  "render_type": "cutout",
+  "textures": {
+    "all": "serene_shrubbery:blocks/waterlilyredone2",
+    "particle": "serene_shrubbery:blocks/waterlilyredone2",
+    "1": "serene_shrubbery:blocks/waterlilyredone2"
+  }
+}

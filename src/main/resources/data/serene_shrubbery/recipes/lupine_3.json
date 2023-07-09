@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "serene_shrubbery:white_lupine"
+    }
+  ],
+  "result": {
+    "item": "minecraft:white_dye",
+    "count": 2
+  }
+}

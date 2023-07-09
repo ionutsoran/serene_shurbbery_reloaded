@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "serene_shrubbery:barrel_cactus_2"
+    }
+  ],
+  "result": {
+    "item": "minecraft:orange_dye",
+    "count": 2
+  }
+}

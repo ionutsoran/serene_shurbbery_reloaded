@@ -1,0 +1,9 @@
+{
+  "parent": "serene_shrubbery:custom/purple_lupine",
+  "render_type": "cutout",
+  "textures": {
+    "all": "serene_shrubbery:blocks/whitelupine",
+    "particle": "serene_shrubbery:blocks/whitelupine",
+    "0": "serene_shrubbery:blocks/whitelupine"
+  }
+}

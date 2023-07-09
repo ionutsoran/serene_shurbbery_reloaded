@@ -1,0 +1,9 @@
+{
+  "parent": "serene_shrubbery:custom/barrelcactus1",
+  "render_type": "cutout",
+  "textures": {
+    "all": "serene_shrubbery:blocks/barrelcactus",
+    "particle": "serene_shrubbery:blocks/barrelcactus",
+    "0": "serene_shrubbery:blocks/barrelcactus"
+  }
+}

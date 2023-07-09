@@ -1,0 +1,25 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+license="Not specified"
+
+[[mods]]
+modId="serene_shrubbery"
+version="1.4.0"
+displayName="Serene Shrubbery"
+credits="Created using mod maker MCreator - https://mcreator.net/about"
+displayURL="https://mcreator.net"
+authors="Tyler Lukes, MCreator"
+description='''
+Flowers
+'''
+
+[[dependencies.serene_shrubbery]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.19.2]"
+    ordering="NONE"
+    side="BOTH"
+
+
+
+

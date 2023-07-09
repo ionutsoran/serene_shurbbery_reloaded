@@ -1,0 +1,9 @@
+{
+  "parent": "serene_shrubbery:custom/hydrangea",
+  "render_type": "cutout",
+  "textures": {
+    "all": "serene_shrubbery:blocks/whitehydrangea",
+    "particle": "serene_shrubbery:blocks/whitehydrangea",
+    "0": "serene_shrubbery:blocks/whitehydrangea"
+  }
+}
