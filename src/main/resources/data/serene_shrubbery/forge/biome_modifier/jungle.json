@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#serene_shrubbery:is_jungle",
-  "features": "serene_shrubbery:jungle",
-  "step": "vegetal_decoration"
-}

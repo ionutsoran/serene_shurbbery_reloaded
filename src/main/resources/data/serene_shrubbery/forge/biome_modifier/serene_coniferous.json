@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#serene_shrubbery:is_serene_coniferous",
+  "features": "serene_shrubbery:serene_coniferous",
+  "step": "vegetal_decoration"
+}

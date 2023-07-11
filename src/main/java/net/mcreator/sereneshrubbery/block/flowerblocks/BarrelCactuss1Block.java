@@ -48,7 +48,10 @@ import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.FluidTags;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
@@ -58,10 +61,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -78,7 +78,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class BarrelCactuss1Block
-extends FlowerBlock {
+extends Block implements net.minecraftforge.common.IPlantable{
 
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     protected static final VoxelShape COLLISION_SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 15.0D, 15.0D);
@@ -89,9 +89,31 @@ extends FlowerBlock {
         }
     };
 
-    @Override
-    protected boolean mayPlaceOn(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
-        return pState.is(BlockTags.DIRT) || pState.is(Blocks.FARMLAND) || pState.is(BlockTags.SAND);
+//    @Override
+//    protected boolean mayPlaceOn(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
+//        return pState.is(BlockTags.DIRT) || pState.is(Blocks.FARMLAND) || pState.is(BlockTags.SAND);
+//    }
+
+    public void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
+        if (!pLevel.isAreaLoaded(pPos, 1)) return; // Forge: prevent growing cactus from loading unloaded chunks with block update
+        if (!pState.canSurvive(pLevel, pPos)) {
+            pLevel.destroyBlock(pPos, true);
+        }
+
+    }
+
+    public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
+//        for(Direction direction : Direction.Plane.HORIZONTAL) {
+//            BlockState blockstate = pLevel.getBlockState(pPos.relative(direction));
+//            if (!blockstate.is(BlockTags.DIRT) && !blockstate.is(Blocks.FARMLAND) &&  !blockstate.is(BlockTags.SAND) || pLevel.getFluidState(pPos.relative(direction)).is(FluidTags.LAVA)) {
+//                return false;
+//            }
+//        }
+        return true;
+//        BlockState blockstate1 = pLevel.getBlockState(pPos.below());
+//        return (blockstate1.is(BlockTags.DIRT) || blockstate1.is(Blocks.FARMLAND) || blockstate1.is(BlockTags.SAND)) &&
+//                !pLevel.getBlockState(pPos.above()).getMaterial().isLiquid();
+        //blockstate1.canSustainPlant(pLevel, pPos, Direction.UP, this)
     }
 
     @Override
@@ -104,7 +126,8 @@ extends FlowerBlock {
     }
 
     public BarrelCactuss1Block(Properties pProperties) {
-        super(mob_effect_supplier, 0, pProperties);
+        //super(mob_effect_supplier, 0, pProperties);
+        super(pProperties);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
 
@@ -116,6 +139,12 @@ extends FlowerBlock {
         return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
         //this.m_49966_().m_61124_((Property)FACING, (Comparable)context.m_8125_().m_122424_());
     }
+
+    @Override
+    public BlockState getPlant(BlockGetter level, BlockPos pos) {
+        return defaultBlockState();
+    }
+
 
 //    public boolean m_7420_(BlockState state, BlockGetter reader, BlockPos pos) {
 //        return true;
