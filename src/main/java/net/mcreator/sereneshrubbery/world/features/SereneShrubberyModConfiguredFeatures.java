@@ -3,6 +3,7 @@ package net.mcreator.sereneshrubbery.world.features;
 import net.mcreator.sereneshrubbery.SereneShrubberyMod;
 import net.mcreator.sereneshrubbery.block.SereneShrubberyModBlocks;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.FeatureUtils;
@@ -101,8 +102,8 @@ public class SereneShrubberyModConfiguredFeatures {
                                             )))))));
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> CACTUS_GROUP = CONFIGURED_FEATURES.register("serene_desert",
-            () -> new ConfiguredFeature(Feature.RANDOM_PATCH,
-                    new RandomPatchConfiguration(150, 1, 0,
+            () -> new ConfiguredFeature(Feature.FLOWER,
+                    new RandomPatchConfiguration(5, 7, 0,
                             PlacementUtils.onlyWhenEmpty((Feature)Feature.SIMPLE_BLOCK,
                                     new SimpleBlockConfiguration(new DualNoiseProvider(
                                             new InclusiveRange<>(10, 64),
@@ -110,6 +111,9 @@ public class SereneShrubberyModConfiguredFeatures {
                                             new NormalNoise.NoiseParameters(128, 2.0), 1.0f,
                                             List.of(
                                                     SereneShrubberyModBlocks.BARREL_CACTUS.get().defaultBlockState(),
+                                                    SereneShrubberyModBlocks.BARREL_CACTUS_2.get().getRotatedState(Direction.SOUTH),
+                                                    SereneShrubberyModBlocks.BARREL_CACTUS_2.get().getRotatedState(Direction.EAST),
+                                                    SereneShrubberyModBlocks.BARREL_CACTUS_2.get().getRotatedState(Direction.WEST),
                                                     SereneShrubberyModBlocks.BARREL_CACTUS_2.get().defaultBlockState()
                                             )))))));
 

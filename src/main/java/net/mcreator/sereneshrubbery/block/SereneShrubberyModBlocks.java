@@ -155,8 +155,8 @@ public class SereneShrubberyModBlocks {
                     .instabreak().noCollission().sound(SoundType.GRASS).lightLevel((l)-> {return 1;})),
             SereneShrubberyModTabs.TAB_SERENE_SHRUBBERY);
 
-    public static final RegistryObject<Block> BARREL_CACTUS_2 = registerBlock("barrel_cactus_2",
-            () -> new BarrelCactuss1Block(BlockBehaviour.Properties.of(Material.GRASS)
+    public static final RegistryObject<BarrelCactus2Block> BARREL_CACTUS_2 = registerBlock("barrel_cactus_2",
+            () -> new BarrelCactus2Block(BlockBehaviour.Properties.of(Material.GRASS)
                     .instabreak().noCollission().sound(SoundType.GRASS).lightLevel((l)-> {return 1;})),
             SereneShrubberyModTabs.TAB_SERENE_SHRUBBERY);
 

@@ -78,7 +78,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class BarrelCactuss1Block
-extends Block implements net.minecraftforge.common.IPlantable{
+extends FlowerBlock implements net.minecraftforge.common.IPlantable{
 
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     protected static final VoxelShape COLLISION_SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 15.0D, 15.0D);
@@ -89,32 +89,32 @@ extends Block implements net.minecraftforge.common.IPlantable{
         }
     };
 
-//    @Override
-//    protected boolean mayPlaceOn(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
-//        return pState.is(BlockTags.DIRT) || pState.is(Blocks.FARMLAND) || pState.is(BlockTags.SAND);
+    @Override
+    protected boolean mayPlaceOn(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
+        return pState.is(BlockTags.DIRT) || pState.is(Blocks.FARMLAND) || pState.is(BlockTags.SAND);
+    }
+
+//    public void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
+//        if (!pLevel.isAreaLoaded(pPos, 1)) return; // Forge: prevent growing cactus from loading unloaded chunks with block update
+//        if (!pState.canSurvive(pLevel, pPos)) {
+//            pLevel.destroyBlock(pPos, true);
+//        }
+//
 //    }
 
-    public void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
-        if (!pLevel.isAreaLoaded(pPos, 1)) return; // Forge: prevent growing cactus from loading unloaded chunks with block update
-        if (!pState.canSurvive(pLevel, pPos)) {
-            pLevel.destroyBlock(pPos, true);
-        }
-
-    }
-
-    public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
-//        for(Direction direction : Direction.Plane.HORIZONTAL) {
-//            BlockState blockstate = pLevel.getBlockState(pPos.relative(direction));
-//            if (!blockstate.is(BlockTags.DIRT) && !blockstate.is(Blocks.FARMLAND) &&  !blockstate.is(BlockTags.SAND) || pLevel.getFluidState(pPos.relative(direction)).is(FluidTags.LAVA)) {
-//                return false;
-//            }
-//        }
-        return true;
-//        BlockState blockstate1 = pLevel.getBlockState(pPos.below());
-//        return (blockstate1.is(BlockTags.DIRT) || blockstate1.is(Blocks.FARMLAND) || blockstate1.is(BlockTags.SAND)) &&
-//                !pLevel.getBlockState(pPos.above()).getMaterial().isLiquid();
-        //blockstate1.canSustainPlant(pLevel, pPos, Direction.UP, this)
-    }
+//    public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
+////        for(Direction direction : Direction.Plane.HORIZONTAL) {
+////            BlockState blockstate = pLevel.getBlockState(pPos.relative(direction));
+////            if (!blockstate.is(BlockTags.DIRT) && !blockstate.is(Blocks.FARMLAND) &&  !blockstate.is(BlockTags.SAND) || pLevel.getFluidState(pPos.relative(direction)).is(FluidTags.LAVA)) {
+////                return false;
+////            }
+////        }
+//        return true;
+////        BlockState blockstate1 = pLevel.getBlockState(pPos.below());
+////        return (blockstate1.is(BlockTags.DIRT) || blockstate1.is(Blocks.FARMLAND) || blockstate1.is(BlockTags.SAND)) &&
+////                !pLevel.getBlockState(pPos.above()).getMaterial().isLiquid();
+//        //blockstate1.canSustainPlant(pLevel, pPos, Direction.UP, this)
+//    }
 
     @Override
     public void entityInside(BlockState pState, Level pLevel, BlockPos pPos, Entity pEntity) {
@@ -126,8 +126,8 @@ extends Block implements net.minecraftforge.common.IPlantable{
     }
 
     public BarrelCactuss1Block(Properties pProperties) {
-        //super(mob_effect_supplier, 0, pProperties);
-        super(pProperties);
+        super(mob_effect_supplier, 0, pProperties);
+        //super(pProperties);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
 
@@ -144,6 +144,10 @@ extends Block implements net.minecraftforge.common.IPlantable{
     public BlockState getPlant(BlockGetter level, BlockPos pos) {
         return defaultBlockState();
     }
+
+
+       // return (BlockState)state.m_61124_((Property)FACING, (Comparable)rot.m_55954_((Direction)state.m_61143_((Property)FACING)));
+
 
 
 //    public boolean m_7420_(BlockState state, BlockGetter reader, BlockPos pos) {
@@ -174,11 +178,7 @@ extends Block implements net.minecraftforge.common.IPlantable{
 //    protected void m_7926_(StateDefinition.Builder<Block, BlockState> builder) {
 //        builder.m_61104_(new Property[]{FACING});
 //    }
-//
-//    public BlockState m_6843_(BlockState state, Rotation rot) {
-//        return (BlockState)state.m_61124_((Property)FACING, (Comparable)rot.m_55954_((Direction)state.m_61143_((Property)FACING)));
-//    }
-//
+
 //    public BlockState m_6943_(BlockState state, Mirror mirrorIn) {
 //        return state.m_60717_(mirrorIn.m_54846_((Direction)state.m_61143_((Property)FACING)));
 //    }
