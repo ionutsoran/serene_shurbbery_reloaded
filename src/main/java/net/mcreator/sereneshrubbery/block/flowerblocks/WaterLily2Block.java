@@ -56,6 +56,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.phys.Vec3;
@@ -93,6 +95,12 @@ extends FlowerBlock {
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
         //this.m_49966_().m_61124_((Property)FACING, (Comparable)context.m_8125_().m_122424_());
+    }
+
+    protected boolean mayPlaceOn(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
+        FluidState fluidstate = pLevel.getFluidState(pPos);
+        FluidState fluidstate1 = pLevel.getFluidState(pPos.above());
+        return (fluidstate.getType() == Fluids.WATER || pState.getMaterial() == Material.ICE) && fluidstate1.getType() == Fluids.EMPTY;
     }
 
 //    public boolean m_7420_(BlockState state, BlockGetter reader, BlockPos pos) {

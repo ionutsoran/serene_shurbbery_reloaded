@@ -60,6 +60,8 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.levelgen.LegacyRandomSource;
+import net.minecraft.world.level.levelgen.PositionalRandomFactory;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraftforge.api.distmarker.Dist;
@@ -112,6 +114,7 @@ extends FlowerBlock implements net.minecraftforge.common.IPlantable{
     public BarrelCactus2Block(Properties pProperties) {
         super(mob_effect_supplier, 0, pProperties);
         //super(pProperties);
+        //Direction.NORTH
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
 
@@ -129,24 +132,29 @@ extends FlowerBlock implements net.minecraftforge.common.IPlantable{
         return defaultBlockState();
     }
 
-    public BlockState getRotatedState(Direction direction) {
-
-        //BlockState blockstate = new BlockState();
-        switch (direction) {
-            case SOUTH -> {
-                return this.defaultBlockState().rotate(Rotation.CLOCKWISE_180);
-            }
-            case EAST -> {
-                return this.defaultBlockState().rotate(Rotation.COUNTERCLOCKWISE_90);
-            }
-
-            case WEST -> {
-                return this.defaultBlockState().rotate(Rotation.CLOCKWISE_90);
-            }
-        }
-
-        return this.defaultBlockState();
-    }
+//    public BlockState getRandomRotatedState() {
+//
+//        BlockState blockstate = this.defaultBlockState();
+//        // blockstate.setValue(FACING, Direction.Plane.HORIZONTAL.getRandomDirection(randomsource));
+//        //BlockState blockstate = this.defaultBlockState();
+//
+////        switch (direction) {
+////            case SOUTH -> {
+////                 blockstate.setValue(FACING, Direction.SOUTH);
+////            }
+////            case EAST -> {
+////                blockstate.setValue(FACING, Direction.EAST);
+////                //return this.defaultBlockState().rotate(Rotation.COUNTERCLOCKWISE_90);
+////            }
+////
+////            case WEST -> {
+////                blockstate.setValue(FACING, Direction.WEST);
+////                //return this.defaultBlockState().rotate(Rotation.CLOCKWISE_90);
+////            }
+////        }
+////
+//        return blockstate;
+//    }
 
 //    public boolean m_7420_(BlockState state, BlockGetter reader, BlockPos pos) {
 //        return true;

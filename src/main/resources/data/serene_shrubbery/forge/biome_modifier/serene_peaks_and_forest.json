@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#serene_shrubbery:is_serene_peaks_and_forest",
+  "features": "serene_shrubbery:serene_peaks_and_forest",
+  "step": "vegetal_decoration"
+}
