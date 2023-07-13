@@ -16,10 +16,8 @@ package net.mcreator.sereneshrubbery.item;
 
 import net.mcreator.sereneshrubbery.block.SereneShrubberyModBlocks;
 import net.mcreator.sereneshrubbery.tabs.SereneShrubberyModTabs;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -62,6 +60,13 @@ public class SereneShrubberyModItems {
 //    public static final RegistryObject<Item> PURPLE_LIVERWORT = SereneShrubberyModItems.block(SereneShrubberyModBlocks.PURPLE_LIVERWORT, SereneShrubberyModTabs.TAB_SERENE_SHRUBBERY);
 //    public static final RegistryObject<Item> WHITE_LIVERWORT = SereneShrubberyModItems.block(SereneShrubberyModBlocks.WHITE_LIVERWORT, SereneShrubberyModTabs.TAB_SERENE_SHRUBBERY);
 //    public static final RegistryObject<Item> FIREWEED = SereneShrubberyModItems.block(SereneShrubberyModBlocks.FIREWEED, SereneShrubberyModTabs.TAB_SERENE_SHRUBBERY);
+
+    public static final RegistryObject<Item>  WATER_LILY_ITEM = ITEMS.register("water_lily_item",
+            () -> new PlaceOnWaterBlockItem(SereneShrubberyModBlocks.WATER_LILY.get(), new Item.Properties().tab(SereneShrubberyModTabs.TAB_SERENE_SHRUBBERY)));
+
+    public static final RegistryObject<Item>  WATER_LILY_2_ITEM = ITEMS.register("water_lily_2_item",
+            () -> new PlaceOnWaterBlockItem(SereneShrubberyModBlocks.WATER_LILY_2.get(), new Item.Properties().tab(SereneShrubberyModTabs.TAB_SERENE_SHRUBBERY)));
+
 
     public static  void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

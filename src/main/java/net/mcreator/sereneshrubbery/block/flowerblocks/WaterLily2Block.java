@@ -65,9 +65,11 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.common.PlantType;
+import org.jetbrains.annotations.NotNull;
 
 public class WaterLily2Block
-extends FlowerBlock {
+extends WaterlilyBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     private static final Supplier<MobEffect> mob_effect_supplier = new Supplier<MobEffect>() {
         @Override
@@ -84,7 +86,7 @@ extends FlowerBlock {
     }
 
     public WaterLily2Block(Properties pProperties) {
-        super(mob_effect_supplier, 0, pProperties);
+        super(pProperties);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
 
@@ -97,10 +99,14 @@ extends FlowerBlock {
         //this.m_49966_().m_61124_((Property)FACING, (Comparable)context.m_8125_().m_122424_());
     }
 
-    protected boolean mayPlaceOn(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
+    protected boolean mayPlaceOn(@NotNull BlockState pState, BlockGetter pLevel, @NotNull BlockPos pPos) {
         FluidState fluidstate = pLevel.getFluidState(pPos);
         FluidState fluidstate1 = pLevel.getFluidState(pPos.above());
         return (fluidstate.getType() == Fluids.WATER || pState.getMaterial() == Material.ICE) && fluidstate1.getType() == Fluids.EMPTY;
+    }
+
+    public PlantType getPlantType(BlockGetter level, BlockPos pos) {
+        return PlantType.WATER;
     }
 
 //    public boolean m_7420_(BlockState state, BlockGetter reader, BlockPos pos) {

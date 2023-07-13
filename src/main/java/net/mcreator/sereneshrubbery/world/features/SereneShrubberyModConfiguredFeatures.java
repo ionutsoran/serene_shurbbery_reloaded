@@ -128,7 +128,7 @@ public class SereneShrubberyModConfiguredFeatures {
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> WATER_LILY_GROUP = CONFIGURED_FEATURES.register("serene_swampy_and_jungle",
             () -> new ConfiguredFeature(Feature.FLOWER,
-                    new RandomPatchConfiguration(10, 7, 3,
+                    new RandomPatchConfiguration(42, 7, 3,
                             PlacementUtils.onlyWhenEmpty((Feature)Feature.SIMPLE_BLOCK,
                                     (FeatureConfiguration)new SimpleBlockConfiguration(new DualNoiseProvider(
                                             new InclusiveRange<>(10, 64),

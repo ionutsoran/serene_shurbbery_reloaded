@@ -58,9 +58,10 @@ import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.PlantType;
+import org.jetbrains.annotations.NotNull;
 
 public class WaterLilyBlock
-extends FlowerBlock {
+extends WaterlilyBlock {
 
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     private static final Supplier<MobEffect> mob_effect_supplier = new Supplier<MobEffect>() {
@@ -71,7 +72,7 @@ extends FlowerBlock {
     };
 
     public WaterLilyBlock(Properties pProperties) {
-        super(mob_effect_supplier, 0, pProperties);
+        super(pProperties);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
 
@@ -84,7 +85,7 @@ extends FlowerBlock {
         //this.m_49966_().m_61124_((Property)FACING, (Comparable)context.m_8125_().m_122424_());
     }
 
-    protected boolean mayPlaceOn(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
+    protected boolean mayPlaceOn(@NotNull BlockState pState, BlockGetter pLevel, @NotNull BlockPos pPos) {
         FluidState fluidstate = pLevel.getFluidState(pPos);
         FluidState fluidstate1 = pLevel.getFluidState(pPos.above());
         return (fluidstate.getType() == Fluids.WATER || pState.getMaterial() == Material.ICE) && fluidstate1.getType() == Fluids.EMPTY;
@@ -96,6 +97,10 @@ extends FlowerBlock {
             pLevel.destroyBlock(new BlockPos(pPos), true, pEntity);
         }
 
+    }
+
+    public PlantType getPlantType(BlockGetter level, BlockPos pos) {
+        return PlantType.WATER;
     }
 
 //    public int m_53522_() {

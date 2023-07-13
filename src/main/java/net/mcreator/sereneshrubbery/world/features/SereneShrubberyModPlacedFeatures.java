@@ -77,9 +77,9 @@ public class SereneShrubberyModPlacedFeatures {
                             BiomeFilter.biome())));
 
     public static final RegistryObject<PlacedFeature> WATER_LILIES_PLACED = PLACED_FEATURES.register("serene_swampy_and_jungle",
-            () -> new PlacedFeature(SereneShrubberyModConfiguredFeatures.LIVERWORT_GROUP.getHolder().get(),
+            () -> new PlacedFeature(SereneShrubberyModConfiguredFeatures.WATER_LILY_GROUP.getHolder().get(),
                     List.of(NoiseThresholdCountPlacement.of((double)-1.8, (int)16, (int)2),
-                            RarityFilter.onAverageOnceEvery(16),
+                            RarityFilter.onAverageOnceEvery(10),
                             InSquarePlacement.spread(),
                             PlacementUtils.HEIGHTMAP,
                             BiomeFilter.biome())));

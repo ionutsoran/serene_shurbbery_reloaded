@@ -76,6 +76,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.common.PlantType;
 
 public class BarrelCactuss1Block
 extends FlowerBlock implements net.minecraftforge.common.IPlantable{
@@ -143,6 +144,10 @@ extends FlowerBlock implements net.minecraftforge.common.IPlantable{
     @Override
     public BlockState getPlant(BlockGetter level, BlockPos pos) {
         return defaultBlockState();
+    }
+
+    public PlantType getPlantType(BlockGetter level, BlockPos pos) {
+        return PlantType.DESERT;
     }
 
 
