@@ -28,7 +28,7 @@ public class SereneShrubberyModBOPPlacedFeatures {
     public static final RegistryObject<PlacedFeature> BOP_FOXGLOVE_PLACED = BOP_PLACED_FEATURES.register("bop_serene_jungle",
             () -> new PlacedFeature(SereneShrubberyModConfiguredFeatures.FOXGLOVE_GROUP.getHolder().get(),
                     List.of(NoiseThresholdCountPlacement.of((double)-1.8, (int)16, (int)2),
-                            RarityFilter.onAverageOnceEvery(16),
+                            RarityFilter.onAverageOnceEvery(10),
                             InSquarePlacement.spread(),
                             PlacementUtils.HEIGHTMAP,
                             BiomeFilter.biome())));

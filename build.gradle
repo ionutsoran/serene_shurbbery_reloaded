@@ -5,7 +5,7 @@ plugins {
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
 }
 
-version = '1.19.2-v1.4.0'
+version = '1.19.2-v1.4.2'
 group = 'net.mcreator.serene_shrubbery' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'serene_shrubbery'
 

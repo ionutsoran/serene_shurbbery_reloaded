@@ -18,6 +18,7 @@ package net.mcreator.sereneshrubbery;
 import net.mcreator.sereneshrubbery.block.SereneShrubberyModBlocks;
 import net.mcreator.sereneshrubbery.item.SereneShrubberyModItems;
 import net.mcreator.sereneshrubbery.world.features.SereneShrubberyModBOPPlacedFeatures;
+import net.mcreator.sereneshrubbery.world.features.SereneShrubberyModBYGPlacedFeatures;
 import net.mcreator.sereneshrubbery.world.features.SereneShrubberyModConfiguredFeatures;
 import net.mcreator.sereneshrubbery.world.features.SereneShrubberyModPlacedFeatures;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -39,6 +40,7 @@ public class SereneShrubberyMod {
         SereneShrubberyModItems.ITEMS.register(bus);
         SereneShrubberyModPlacedFeatures.register(bus);
         SereneShrubberyModBOPPlacedFeatures.register(bus);
+        SereneShrubberyModBYGPlacedFeatures.register(bus);
         SereneShrubberyModConfiguredFeatures.register(bus);
     }
 }
