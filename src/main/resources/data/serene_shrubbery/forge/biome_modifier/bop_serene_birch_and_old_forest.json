@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#serene_shrubbery:is_bop_serene_birch_and_old_forest",
+  "features": "serene_shrubbery:bop_serene_birch_and_old_forest",
+  "step": "vegetal_decoration"
+}
